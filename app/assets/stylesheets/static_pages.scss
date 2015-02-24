@@ -1,3 +1,129 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$blur: 2px;
+// $blur-hover: 1em;
+$chroma-shift: .03em;
+$chroma-blur: .06em;
+$chroma-right: red;
+$chroma-left: aqua;
+$chroma-blend: rgba(gold,.75);
+
+
+.focus {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-family: futura, sans-serif;
+  font-size: 8em;
+  color: transparent;
+  text-align: center;
+  letter-spacing: .2em;
+  transition: letter-spacing 2s ease;
+  
+  .letter {
+    transition: text-shadow 2s ease;
+    
+    &:nth-of-type(1),
+    &:nth-of-type(5) {
+      text-shadow: 0 0 2px white,
+      0 0 1px $chroma-blend,
+    $chroma-shift 0 $chroma-blur rgba($chroma-right,.9),
+    -$chroma-shift 0 $chroma-blur rgba($chroma-left,.9);
+    }
+    &:nth-of-type(2),
+    &:nth-of-type(4) {
+      text-shadow: 0 0 2px white,
+      0 0 1px $chroma-blend,
+    ($chroma-shift * .6 ) 0 ($chroma-blur * .6 ) rgba($chroma-right,.9),
+    -($chroma-shift * .6 ) 0 ($chroma-blur * .6 ) rgba($chroma-left,.9);
+    }
+    &:nth-of-type(3) {
+      text-shadow: 0 0 2px white,
+      0 0 1px $chroma-blend,
+    ($chroma-shift * .1 ) 0 ($chroma-blur * .1 ) rgba($chroma-right,.9),
+    -($chroma-shift * .1 ) 0 ($chroma-blur * .1 ) rgba($chroma-left,.9);
+    }
+  }
+}
+
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  
+  &:hover {
+    .focus {
+      letter-spacing: .55em;
+      .letter {
+        &:nth-of-type(1),
+        &:nth-of-type(5) {
+          text-shadow: 0 0 4px white,
+          0 0 1px $chroma-blend,
+            ($chroma-shift * 1.4 ) 0 ($chroma-blur * 1.4 ) rgba($chroma-right,.9),
+            -($chroma-shift * 1.4 ) 0 ($chroma-blur * 1.4 ) rgba($chroma-left,.9);
+        }
+        &:nth-of-type(2),
+        &:nth-of-type(4) {
+          text-shadow: 0 0 2px white,
+          0 0 1px $chroma-blend,
+            ($chroma-shift * .8 ) 0 ($chroma-blur * 1.1 ) rgba($chroma-right,.9),
+            -($chroma-shift * .8 ) 0 ($chroma-blur * 1.1 ) rgba($chroma-left,.9);
+        }
+        &:nth-of-type(3) {
+          text-shadow: 0 0 1px white,
+          0 0 1px $chroma-blend,
+            ($chroma-shift * .3 ) 0 ($chroma-blur * .8 ) rgba($chroma-right,.9),
+            -($chroma-shift * .3 ) 0 ($chroma-blur * .8 ) rgba($chroma-left,.9);
+        }
+      }
+    }
+    .bg-img {
+      // opacity: 0;
+    }
+    .bg-img-blur {
+      opacity: 1;
+    }
+  }
+}
+.img-vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 4em black;
+  //transform: scale(1.5);
+}
+
+.bg-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url(http://i.imgur.com/CwsV25M.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur($blur);
+}
+
+.bg-img-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url(http://i.imgur.com/CwsV25M.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
