@@ -1,33 +1,24 @@
 <% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    
-  </head>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
 
-<div class="widget center">
-  <div class="text center">
-    <h1 class="">Users</h1>
-    <p>Coming soon.</p>
-  </div>
-  <div class="blur">
-    <img src="" class="bg">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
-
-
-
-<img src="" class="bg">
-
-
-
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
- <filter id="blur">
-   <feGaussianBlur stdDeviation="10" />
-   </filter>
-</svg> 
-
-<link href='http://fonts.googleapis.com/css?family=Arvo:400,700|Lato:400,500' rel='stylesheet' type='text/css'>
-
-</html>

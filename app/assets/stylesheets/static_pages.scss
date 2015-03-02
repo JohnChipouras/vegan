@@ -53,11 +53,8 @@ $chroma-blend: rgba(gold,.75);
   }
 }
 
-
-html {
-  height: 100%;
-}
 body {
+  padding-top: 80px;
   height: 100%;
   
   &:hover {
@@ -139,7 +136,7 @@ img.bg {
   width: 100%;
   height: auto;
   position: fixed;
-  top: 0;
+  top: 50px;
   left: 0;
   z-index:-2;
 }
@@ -202,7 +199,7 @@ figure {
   overflow: hidden;
   width: 136px; height: 148px;
   margin-right: 30px;
-  margin-top: 300px;
+  margin-top: 250px;
 }
 
 /** Hexagon Mask **/
