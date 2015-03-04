@@ -1,0 +1,14 @@
+<p>Hi <%= @user.name %>,</p>
+
+<p>We're so excited you are interested in joining our little foodie community! </p>
+
+<p> Our goal is to help make grocery shopping easier, reduce waste and 
+build a wonderful community of individuals who love sharing their
+experiences, expertise and joy for food. </p>
+
+<p>@Kate is our lead food engineer. We recommend following her once you have activated your accound.</p>
+
+<p>With that, we invite you to join us:</p>
+
+<%= link_to "Get Started!", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>
