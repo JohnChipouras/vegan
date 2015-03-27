@@ -1,4 +1,20 @@
-
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="list_form">
+        <%= render 'shared/list_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Latest Grocery Lists Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+  </div>
+<% else %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,3 +35,4 @@
 <div class="bg-img-blur"></div>
 
 </html>
+<% end %>

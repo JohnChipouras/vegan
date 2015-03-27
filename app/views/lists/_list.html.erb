@@ -1,0 +1,15 @@
+<li id="list-<%= list.id %>">
+  <%= link_to gravatar_for(list.user), list.user %>
+  <span class="user"><%= link_to list.user.name, list.user %></span>
+  <span class="content"><%= list.content %></span>
+    <%= list.content %>
+    <%= image_tag list.picture.url if list.picture? %>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(list.created_at) %> ago.
+    <% if current_user?(list.user) %>
+      <%= link_to "delete", list, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>
