@@ -15,5 +15,9 @@ private
         redirect_to login_url
       end
     end
+    
+    def feed
+      List.where("user_id = ?", id)
+    end
 
 end
