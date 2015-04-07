@@ -16,8 +16,6 @@ private
       end
     end
     
-    def feed
-      List.where("user_id = ?", id)
-    end
+
 
 end
