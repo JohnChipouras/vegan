@@ -1,2 +1,3 @@
 # vegan
-An app that allows users to share their grocery list (and meals that come from it)
+A social playground for vegans to share grocery ideas.
+https://www.vegangrocerylist.com/
